@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress - Student Portal</title>
+    <link rel="stylesheet" href="progress.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="https://via.placeholder.com/80" alt="Profile" class="profile-img">
+                <div class="profile-info">
+                    <h3 id="userName">Loading...</h3>
+                    <span id="userSubject">Progress Report</span>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="dashboard.html">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+                <a href="#" class="active">
+                    <i class="fas fa-chart-line"></i> Progress
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="progress-container">
+                <h2>Your Learning Progress</h2>
+                
+                <div class="overall-progress">
+                    <div class="progress-card">
+                        <h3>Overall Performance</h3>
+                        <div class="score-circle">
+                            <span id="overallScore">0%</span>
+                        </div>
+                        <p>Based on your latest assessment</p>
+                    </div>
+                </div>
+
+                <div class="subject-progress">
+                    <h3>Subject-wise Progress</h3>
+                    <div class="subject-grid">
+                        <div class="subject-card mathematics">
+                            <div class="subject-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h4>Mathematics</h4>
+                            <div class="progress-bar">
+                                <div class="progress" id="mathProgress"></div>
+                            </div>
+                            <span class="score" id="mathScore">0%</span>
+                            <div class="details">
+                                <span>Questions: <span id="mathQuestions">0/0</span></span>
+                                <span>Time Spent: <span id="mathTime">0 min</span></span>
+                            </div>
+                        </div>
+
+                        <div class="subject-card english">
+                            <div class="subject-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4>English</h4>
+                            <div class="progress-bar">
+                                <div class="progress" id="englishProgress"></div>
+                            </div>
+                            <span class="score" id="englishScore">0%</span>
+                            <div class="details">
+                                <span>Questions: <span id="englishQuestions">0/0</span></span>
+                                <span>Time Spent: <span id="englishTime">0 min</span></span>
+                            </div>
+                        </div>
+
+                        <div class="subject-card science">
+                            <div class="subject-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h4>Science</h4>
+                            <div class="progress-bar">
+                                <div class="progress" id="scienceProgress"></div>
+                            </div>
+                            <span class="score" id="scienceScore">0%</span>
+                            <div class="details">
+                                <span>Questions: <span id="scienceQuestions">0/0</span></span>
+                                <span>Time Spent: <span id="scienceTime">0 min</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list" id="activityList">
+                        <!-- Activities will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="progress.js"></script>
+</body>
+</html>

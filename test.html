@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Test - Student Portal</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="https://via.placeholder.com/80" alt="Profile" class="profile-img">
+                <div class="profile-info">
+                    <h3 id="userName">Loading...</h3>
+                    <span id="userSubject">Assessment Test</span>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="dashboard.html">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+                <a href="#" class="active">
+                    <i class="fas fa-tasks"></i> Current Test
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="test-container">
+                <div class="test-header">
+                    <h2>Assessment Test</h2>
+                    <div class="timer">
+                        <i class="fas fa-clock"></i>
+                        Time Remaining: <span id="timeRemaining">30:00</span>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="testProgress"></div>
+                    </div>
+                    <span class="progress-text">Question <span id="currentQuestionNum">1</span> of <span id="totalQuestions">10</span></span>
+                </div>
+
+                <div id="questionContainer" class="question-container">
+                    <!-- Questions will be inserted here by JavaScript -->
+                </div>
+
+                <div class="test-controls">
+                    <button id="prevBtn" class="secondary-btn">
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button id="nextBtn" class="primary-btn">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button id="submitBtn" class="submit-btn hidden">
+                        Submit Test <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="test.js"></script>
+</body>
+</html>

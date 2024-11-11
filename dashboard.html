@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Multi-subject Assessment</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="/api/placeholder/80/80" alt="Profile" class="profile-img">
+                <div class="profile-info">
+                    <h3 id="userName">Loading...</h3>
+                    <span id="userSubject">Loading...</span>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" class="active" data-section="main">
+                    <i class="fas fa-home"></i> Main
+                </a>
+                <a href="#dashboard" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i> Dashboard
+                </a>
+                <a href="#tests" data-section="tests">
+                    <i class="fas fa-tasks"></i> Tests
+                </a>
+                <a href="courses.html" data-section="courses">
+                    <i class="fas fa-book"></i> My Courses
+                </a>
+                <a href="#progress" data-section="progress">
+                    <i class="fas fa-chart-bar"></i> Progress
+                </a>
+            </nav>
+
+            <div class="logout">
+                <a href="index.html">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+            </header>
+
+            <!-- Welcome Section -->
+            <section id="welcomeSection" class="content-section active">
+                <h1>Welcome to Your Learning Journey!</h1>
+                <div class="welcome-card">
+                    <div class="welcome-message">
+                        <h2>Start Your Multi-subject Assessment</h2>
+                        <p>Take our comprehensive test covering Mathematics, English, and Science to determine your current knowledge level and get personalized course recommendations.</p>
+                        <div class="subject-overview">
+                            <div class="subject-item">
+                                <i class="fas fa-calculator"></i>
+                                <span>Mathematics</span>
+                            </div>
+                            <div class="subject-item">
+                                <i class="fas fa-book"></i>
+                                <span>English</span>
+                            </div>
+                            <div class="subject-item">
+                                <i class="fas fa-flask"></i>
+                                <span>Science</span>
+                            </div>
+                        </div>
+                        <button id="startTestBtn" class="primary-btn">
+                            <i class="fas fa-play"></i> Start Assessment
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Test Section -->
+            <section id="testSection" class="content-section hidden">
+                <div class="test-container">
+                    <div class="test-header">
+                        <h2>Comprehensive Assessment</h2>
+                        <div class="timer">
+                            Time Remaining: <span id="timeRemaining">30:00</span>
+                        </div>
+                    </div>
+                    <div class="subject-indicator">
+                        Current Subject: <span id="currentSubject">Mathematics</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <div id="questionContainer" class="question-container">
+                        <!-- Questions will be inserted here -->
+                    </div>
+                    <div class="test-controls">
+                        <button id="prevQuestion" class="secondary-btn" disabled>
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button id="nextQuestion" class="primary-btn">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button id="submitTest" class="submit-btn hidden">
+                            Submit Test
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="content-section hidden">
+                <div class="results-container">
+                    <h2>Assessment Results</h2>
+                    <div class="overall-score">
+                        <div class="score-card">
+                            <div class="score-circle">
+                                <span id="scorePercentage">0%</span>
+                            </div>
+                            <div class="level-badge" id="difficultyLevel">
+                                Level: Intermediate
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="subject-scores" id="subjectScores">
+                        <h3>Subject-wise Performance</h3>
+                        <div class="subject-score-grid">
+                            <div class="subject-score math">
+                                <i class="fas fa-calculator"></i>
+                                <h4>Mathematics</h4>
+                                <div class="score-circle small">
+                                    <span id="mathScore">0%</span>
+                                </div>
+                            </div>
+                            <div class="subject-score english">
+                                <i class="fas fa-book"></i>
+                                <h4>English</h4>
+                                <div class="score-circle small">
+                                    <span id="englishScore">0%</span>
+                                </div>
+                            </div>
+                            <div class="subject-score science">
+                                <i class="fas fa-flask"></i>
+                                <h4>Science</h4>
+                                <div class="score-circle small">
+                                    <span id="scienceScore">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommended-courses">
+                        <h3>Recommended Courses</h3>
+                        <div class="course-grid" id="courseRecommendations">
+                            <!-- Course recommendations will be inserted here -->
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button id="viewDetailedReport" class="secondary-btn">
+                            <i class="fas fa-file-alt"></i> View Detailed Report
+                        </button>
+                        <button id="startLearning" class="primary-btn" onclick="window.location.href='courses.html'">
+                            <i class="fas fa-graduation-cap"></i> Start Learning
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Courses Preview Section -->
+            <section id="coursesSection" class="content-section hidden">
+                <div class="courses-container">
+                    <h2>My Learning Path</h2>
+                    <div class="course-progress">
+                        <!-- Course progress will be displayed here -->
+                    </div>
+                    <button class="primary-btn" onclick="window.location.href='courses.html'" style="margin-top: 20px;">
+                        <i class="fas fa-book"></i> View All Courses
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

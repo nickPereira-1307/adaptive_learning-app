@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Courses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="courses.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="/api/placeholder/80/80" alt="Profile" class="profile-img">
+                <div class="profile-info">
+                    <h3 id="userName">Loading...</h3>
+                    <span id="userSubject">Loading...</span>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="dashboard.html" data-section="main">
+                    <i class="fas fa-home"></i> Main
+                </a>
+                <a href="dashboard.html#dashboard" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i> Dashboard
+                </a>
+                <a href="dashboard.html#tests" data-section="tests">
+                    <i class="fas fa-tasks"></i> Tests
+                </a>
+                <a href="#" class="active" data-section="courses">
+                    <i class="fas fa-book"></i> My Courses
+                </a>
+                <a href="dashboard.html#progress" data-section="progress">
+                    <i class="fas fa-chart-bar"></i> Progress
+                </a>
+            </nav>
+
+            <div class="logout">
+                <a href="index.html">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search courses...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+            </header>
+
+            <!-- Subject Selection Section -->
+            <section id="subjectSelectionPage" class="content-section active">
+                <h1>Choose Your Subject</h1>
+                <div class="subject-grid">
+                    <div class="subject-card" data-subject="maths">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Mathematics</h3>
+                        <p>Algebra, Geometry, and more</p>
+                    </div>
+                    <div class="subject-card" data-subject="science">
+                        <i class="fas fa-flask"></i>
+                        <h3>Science</h3>
+                        <p>Biology, Chemistry, and Physics</p>
+                    </div>
+                    <div class="subject-card" data-subject="english">
+                        <i class="fas fa-language"></i>
+                        <h3>English</h3>
+                        <p>Grammar, Vocabulary, and Writing</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Courses Section -->
+            <section id="coursesPage" class="content-section hidden">
+                <div class="section-header">
+                    <button class="secondary-btn" onclick="goBack()">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <h2 id="subjectTitle"></h2>
+                </div>
+                
+                <div id="videoContainer" class="video-grid">
+                    <!-- Video cards will be dynamically inserted here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="courses.js"></script>
+</body>
+</html>
